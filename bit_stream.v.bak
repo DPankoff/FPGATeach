@@ -1,0 +1,27 @@
+module bit_stream
+(input clk, EA,
+input [10:0] count_h, count_v,
+output red,green,blue);
+
+reg r=0;
+reg g=0;
+reg b=0;
+
+assign red = r;
+assign green = g;
+assign blue = b;
+
+always @ (posedge clk)
+begin
+if(EA) begin
+r = 1;
+b = 1;
+g = 1;
+end
+else begin
+r = 0;
+b = 0;
+g = 0;
+end
+end 
+endmodule

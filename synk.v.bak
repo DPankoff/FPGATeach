@@ -1,0 +1,23 @@
+module synk
+(input clk,output v_synk, h_synk, ea,
+output [10:0] count_h, output [10:0] count_v );
+
+reg [10:0] h_count = 0;
+reg [10:0] v_count = 0;
+reg v = 0;
+reg h = 0;
+reg ea_reg =0;
+
+assign count_h = h_count;
+assign count_v = v_count; 
+assign v_synk = v;
+assign h_synk = h;
+assign ea = ea_reg;
+
+always @ (posedge clk)
+begin
+
+
+count_h <= count_h + 1;
+end
+endmodule    
